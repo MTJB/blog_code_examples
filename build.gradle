@@ -2,6 +2,7 @@ plugins {
 	id 'org.springframework.boot' version '2.3.4.RELEASE'
 	id 'io.spring.dependency-management' version '1.0.10.RELEASE'
 	id 'java'
+	id 'groovy'
 }
 
 group = 'com.mtjb'
@@ -21,6 +22,9 @@ dependencies {
 
 	compile        	'com.h2database:h2'
 	compile			'com.microsoft.sqlserver:mssql-jdbc'
+
+	testCompile		'org.testcontainers:testcontainers:1.14.3'
+	testCompile		'org.testcontainers:mssqlserver:1.14.3'
 
 	testImplementation('org.spockframework:spock-core:2.0-M3-groovy-3.0')
 	testImplementation('org.spockframework:spock-spring:2.0-M3-groovy-3.0')
