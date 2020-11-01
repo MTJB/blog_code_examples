@@ -1,5 +1,6 @@
-package com.mtjb.examples.TestContainers
+package com.mtjb.examples.test_containers
 
+import com.mtjb.examples.SqlSpec
 import com.mtjb.examples.entities.CarGarage
 import com.mtjb.examples.repositories.CarGarageRepository
 import com.mtjb.examples.services.CarGarageService
@@ -11,7 +12,7 @@ import javax.persistence.EntityManager
 
 @SpringBootTest
 @ActiveProfiles("mssql-test")
-class SqlserverTests extends SqlSpec {
+class SqlServerTests extends SqlSpec {
 
     @Autowired CarGarageService carGarageService
     @Autowired CarGarageRepository carGarageRepository
