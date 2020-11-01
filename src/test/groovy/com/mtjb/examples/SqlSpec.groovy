@@ -1,4 +1,4 @@
-package com.mtjb.examples.TestContainers
+package com.mtjb.examples
 
 import org.springframework.context.ApplicationContextInitializer
 import org.springframework.context.ConfigurableApplicationContext

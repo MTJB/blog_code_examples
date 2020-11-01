@@ -14,7 +14,6 @@ public class CarGarage {
 
     private String name;
 
-
     public Long getId() {
         return id;
     }
