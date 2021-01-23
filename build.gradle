@@ -23,6 +23,9 @@ dependencies {
 	compile        	'com.h2database:h2'
 	compile			'com.microsoft.sqlserver:mssql-jdbc'
 
+	compileOnly 		group: 'org.projectlombok', name: 'lombok', version: '1.18.16'
+	annotationProcessor group: 'org.projectlombok', name: 'lombok', version: '1.18.16'
+
 	testCompile		'org.testcontainers:testcontainers:1.14.3'
 	testCompile		'org.testcontainers:mssqlserver:1.14.3'
 

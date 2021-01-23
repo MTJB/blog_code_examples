@@ -9,20 +9,12 @@ import javax.persistence.Id;
 
 @Data
 @Entity
-public class Customer {
-
-    public Customer() {
-    }
-
-    public Customer(String firstName, String lastName) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-    }
+public class Car {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String firstName;
-    private String lastName;
+    private String make;
+    private String model;
 }

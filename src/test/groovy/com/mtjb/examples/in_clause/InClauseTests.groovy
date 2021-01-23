@@ -43,7 +43,7 @@ class InClauseTests extends SqlSpec {
 
     def "Param size limit"() {
         when: "Calling the query with 2025 params"
-            customerRepository.findAllById(1L..2098 as Set)
+            customerRepository.findAllById(1L..2000 as Set)
         then:
             noExceptionThrown()
         when: "Calling the query with 2099 params - this is rounded up to next power of 2!"
