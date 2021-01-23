@@ -1,10 +1,8 @@
 package com.mtjb.examples.in_clause
 
-
-import com.mtjb.examples.SqlSpec
+import com.mtjb.examples.test_profiles.SqlSpec
 import com.mtjb.examples.entities.Customer
 import com.mtjb.examples.repositories.CustomerRepository
-import org.hibernate.exception.SQLGrammarException
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.dao.InvalidDataAccessResourceUsageException

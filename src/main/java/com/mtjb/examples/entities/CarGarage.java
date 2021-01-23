@@ -1,11 +1,10 @@
 package com.mtjb.examples.entities;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Set;
 
 @Data
 @Entity
@@ -16,4 +15,8 @@ public class CarGarage {
     private Long id;
 
     private String name;
+
+    @EqualsAndHashCode.Exclude
+    @OneToMany(mappedBy = "garage")
+    private Set<Car> cars;
 }

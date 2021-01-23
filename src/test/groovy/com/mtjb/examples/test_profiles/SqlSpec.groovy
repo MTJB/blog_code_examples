@@ -1,4 +1,4 @@
-package com.mtjb.examples
+package com.mtjb.examples.test_profiles
 
 import org.springframework.context.ApplicationContextInitializer
 import org.springframework.context.ConfigurableApplicationContext

@@ -1,24 +1,19 @@
 package com.mtjb.examples.services;
 
+import com.mtjb.examples.dto.CarGarageDto;
+import com.mtjb.examples.entities.Car;
 import com.mtjb.examples.entities.CarGarage;
-import com.mtjb.examples.repositories.CarGarageRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import javassist.NotFoundException;
 
-import javax.transaction.Transactional;
 import java.util.List;
 
-@Service
-public class CarGarageService {
+public interface CarGarageService {
 
-    @Autowired private CarGarageRepository carGarageRepository;
+    List<CarGarage> findAll();
 
-    @Transactional
-    public CarGarage save(CarGarage carGarage) {
-        return carGarageRepository.save(carGarage);
-    }
+    CarGarage findById(Long id) throws NotFoundException;
 
-    public List<CarGarage> findAll() {
-        return (List<CarGarage>) carGarageRepository.findAll();
-    }
+    List<Car> findCarsByMake(CarGarageDto dto, String make);
+
+    CarGarage create(CarGarageDto dto);
 }

@@ -2,10 +2,7 @@ package com.mtjb.examples.entities;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Data
 @Entity
@@ -17,4 +14,8 @@ public class Car {
 
     private String make;
     private String model;
+
+    @ManyToOne
+    @JoinColumn(name = "garage_id", nullable = false)
+    private CarGarage garage;
 }

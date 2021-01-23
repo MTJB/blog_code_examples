@@ -1,9 +1,10 @@
 package com.mtjb.examples.test_containers
 
-import com.mtjb.examples.SqlSpec
+import com.mtjb.examples.dto.CarGarageDto
 import com.mtjb.examples.entities.CarGarage
 import com.mtjb.examples.repositories.CarGarageRepository
 import com.mtjb.examples.services.CarGarageService
+import com.mtjb.examples.test_profiles.SqlSpec
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.test.context.ActiveProfiles
@@ -20,9 +21,9 @@ class SqlServerTests extends SqlSpec {
 
     def "Basic entity save, fetch, and delete"() {
         given: "A new car garage saved"
-            carGarageService.save(new CarGarage(name: "My First Car Garage"))
+            carGarageService.create(new CarGarageDto(name: "My First Car Garage"))
         when: "Fetched"
-            List<CarGarage> saved = carGarageService.findAll()
+            Set<CarGarage> saved = carGarageService.findAll()
         then: "The saved entity is returned"
             saved.name == ["My First Car Garage"]
         when: "Deleting"
@@ -33,7 +34,7 @@ class SqlServerTests extends SqlSpec {
 
     def "MSSQL-specific query syntax"() {
         given: "A new car garage saved"
-            carGarageService.save(new CarGarage(name: "Foo"))
+            carGarageService.create(new CarGarageDto(name: "Foo"))
         when: "Querying the table using 'IIF'"
             def results = entityManager.createNativeQuery('''
                 SELECT IIF(name = 'Foo', 'true', 'false')
