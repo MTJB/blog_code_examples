@@ -9,10 +9,15 @@ import com.mtjb.examples.services.CarService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.test.context.ContextConfiguration
+import org.springframework.test.context.TestPropertySource
 import spock.lang.Specification
 
 @SpringBootTest
 @ContextConfiguration
+@TestPropertySource(properties = [
+        "spring.jpa.properties.hibernate.generate_statistics=true",
+        "logging.level.org.hibernate.stat=debug"
+])
 class CriteriaQueryTests extends Specification {
 
     @Autowired CarGarageService carGarageService
