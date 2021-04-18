@@ -6,6 +6,10 @@ import javax.persistence.*;
 
 @Data
 @Entity
+@NamedEntityGraph(
+    name = "Car.garage",
+    attributeNodes = {@NamedAttributeNode(value = "garage")}
+)
 public class Car {
 
     @Id
@@ -14,8 +18,9 @@ public class Car {
 
     private String make;
     private String model;
+    private String registration;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "garage_id", nullable = false)
     private CarGarage garage;
 }

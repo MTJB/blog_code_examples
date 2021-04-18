@@ -3,12 +3,12 @@ package com.mtjb.examples.services;
 import com.mtjb.examples.dto.CarDto;
 import com.mtjb.examples.entities.Car;
 import com.mtjb.examples.repositories.CarRepository;
-import javassist.NotFoundException;
 import lombok.SneakyThrows;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.List;
 
 @Service
 public class CarServiceImpl implements CarService {
@@ -33,13 +33,13 @@ public class CarServiceImpl implements CarService {
         return carRepository.save(car);
     }
 
-    /**
-     * @return The Car, if found. If not found {@link javassist.NotFoundException} thrown.
-     */
     @Override
-    @SneakyThrows
-    public Car findById(Long id) {
-        return carRepository.findById(id)
-                .orElseThrow(() -> new NotFoundException(String.format("Car with id {%d} not found", id)));
+    public List<Car> findAll() {
+        return carRepository.findAllCars();
+    }
+
+    @Override
+    public List<Car> findAllCarsByEntityGraph() {
+        return carRepository.findAll();
     }
 }
