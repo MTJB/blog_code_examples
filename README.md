@@ -14,4 +14,5 @@ All code and examples used on [marktjbrown.com](https://marktjbrown.com).
 |[Activate Hibernate Query Statistics to investigate your performance issues](https://marktjbrown.com/hibernate-statistics)|[criteria_queries](src/test/groovy/com/mtjb/examples/criteria_queries)|
 |[How to introduce a Cartesian Product into your generated queries](https://marktjbrown.com/criteria-query)|[criteria_queries](src/test/groovy/com/mtjb/examples/criteria_queries)|
 |[Fixing the N+1 query problem](https://marktjbrown.com/fixing-the-n-plus-one-query-problem)|[criteria_queries](src/test/groovy/com/mtjb/examples/criteria_queries)|
+|[Automate away your N+1 problems with Hibernate Statistics](https://marktjbrown.com/automate-away-n-plus-one)|[criteria_queries](src/test/groovy/com/mtjb/examples/criteria_queries/NPlusOneTests.groovy)|
 
