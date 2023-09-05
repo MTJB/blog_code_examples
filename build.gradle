@@ -7,7 +7,7 @@ plugins {
 
 group = 'com.mtjb'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '14'
+sourceCompatibility = '17'
 
 repositories {
 	mavenCentral()
