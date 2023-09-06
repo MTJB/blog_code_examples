@@ -27,7 +27,7 @@ dependencies {
 	annotationProcessor group: 'org.projectlombok', name: 'lombok', version: '1.18.28'
 
 	testImplementation 'org.testcontainers:testcontainers:1.14.3'
-	testImplementation 'org.testcontainers:mssqlserver:1.14.3'
+	testImplementation 'org.testcontainers:mssqlserver:1.19.0'
 
 	testImplementation('org.spockframework:spock-core:2.0-M3-groovy-3.0')
 	testImplementation('org.spockframework:spock-spring:2.0-M3-groovy-3.0')
