@@ -1,13 +1,13 @@
 package com.mtjb.examples.in_clause
 
-import com.mtjb.examples.test_profiles.SqlSpec
 import com.mtjb.examples.entities.Customer
 import com.mtjb.examples.repositories.CustomerRepository
+import com.mtjb.examples.test_profiles.SqlSpec
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.dao.InvalidDataAccessResourceUsageException
 import org.springframework.test.context.ActiveProfiles
-import org.testcontainers.shaded.org.apache.commons.lang.RandomStringUtils
+import org.testcontainers.shaded.org.apache.commons.lang3.RandomStringUtils
 import spock.lang.Shared
 
 @SpringBootTest
