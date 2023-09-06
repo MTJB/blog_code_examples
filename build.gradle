@@ -7,7 +7,7 @@ plugins {
 
 group = 'com.mtjb'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '14'
+sourceCompatibility = '11'
 
 repositories {
 	mavenCentral()
@@ -20,14 +20,14 @@ dependencies {
 	implementation 	'org.springframework.boot:spring-boot-starter-web'
 	implementation 	'org.codehaus.groovy:groovy:3.0.5'
 
-	compile        	'com.h2database:h2'
-	compile			'com.microsoft.sqlserver:mssql-jdbc'
+	implementation 'com.h2database:h2'
+	implementation 'com.microsoft.sqlserver:mssql-jdbc'
 
-	compileOnly 		group: 'org.projectlombok', name: 'lombok', version: '1.18.16'
-	annotationProcessor group: 'org.projectlombok', name: 'lombok', version: '1.18.16'
+	compileOnly 		group: 'org.projectlombok', name: 'lombok', version: '1.18.28'
+	annotationProcessor group: 'org.projectlombok', name: 'lombok', version: '1.18.28'
 
-	testCompile		'org.testcontainers:testcontainers:1.14.3'
-	testCompile		'org.testcontainers:mssqlserver:1.14.3'
+	testImplementation 'org.testcontainers:testcontainers:1.14.3'
+	testImplementation 'org.testcontainers:mssqlserver:1.14.3'
 
 	testImplementation('org.spockframework:spock-core:2.0-M3-groovy-3.0')
 	testImplementation('org.spockframework:spock-spring:2.0-M3-groovy-3.0')
