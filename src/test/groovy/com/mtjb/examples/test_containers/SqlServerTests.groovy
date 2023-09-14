@@ -5,11 +5,10 @@ import com.mtjb.examples.entities.CarGarage
 import com.mtjb.examples.repositories.CarGarageRepository
 import com.mtjb.examples.services.CarGarageService
 import com.mtjb.examples.test_profiles.SqlSpec
+import jakarta.persistence.EntityManager
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.test.context.ActiveProfiles
-
-import javax.persistence.EntityManager
 
 @SpringBootTest
 @ActiveProfiles("mssql-test")

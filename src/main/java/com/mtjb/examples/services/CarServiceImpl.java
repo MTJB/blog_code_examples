@@ -3,11 +3,11 @@ package com.mtjb.examples.services;
 import com.mtjb.examples.dto.CarDto;
 import com.mtjb.examples.entities.Car;
 import com.mtjb.examples.repositories.CarRepository;
+import jakarta.transaction.Transactional;
 import lombok.SneakyThrows;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 
-import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
