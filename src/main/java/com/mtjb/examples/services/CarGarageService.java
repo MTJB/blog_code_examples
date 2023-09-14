@@ -3,7 +3,7 @@ package com.mtjb.examples.services;
 import com.mtjb.examples.dto.CarGarageDto;
 import com.mtjb.examples.entities.Car;
 import com.mtjb.examples.entities.CarGarage;
-import javassist.NotFoundException;
+import com.mtjb.examples.exceptions.NotFoundException;
 
 import java.util.List;
 
