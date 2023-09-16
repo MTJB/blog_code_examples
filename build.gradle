@@ -1,3 +1,7 @@
+import java.util.regex.Matcher
+import java.util.regex.Pattern
+import java.util.stream.Collectors
+
 plugins {
 	id 'org.springframework.boot' version '3.1.3'
 	id 'io.spring.dependency-management' version '1.1.3'
@@ -46,4 +50,53 @@ checkstyle {
 	toolVersion = '10.12.2'
 	maxWarnings = 0
 	maxErrors = 0
+}
+
+task checkstyleChangedFiles(type: Checkstyle) {
+	group = 'verification'
+	description = 'Custom Checkstyle task which checks files that have been modified.'
+	classpath = configurations.checkstyle
+
+	maxWarnings = 0
+	maxErrors = 0
+
+	List<String> changedFiles = getChangedFiles()
+	source = changedFiles
+}
+
+/**
+ * Get all files that are changed but not deleted nor renamed.
+ * Compares to master or the specified target branch.
+ *
+ * @return list of all changed files
+ */
+static def getChangedFiles() {
+	// Get the target branch
+	def ghTargetBranch = System.getenv("GITHUB_BASE_REF")
+
+	// Compare to master if no branch specified
+	def targetBranch = ghTargetBranch ? "origin/${ghTargetBranch}" : "main"
+
+	// Get list of all changed files including status
+	def systemOutStream = new ByteArrayOutputStream()
+	def command = "git diff --name-status --diff-filter=dr $targetBranch -- blocks-server"
+	command.execute().waitForProcessOutput(systemOutStream, System.err)
+	def allFiles = systemOutStream.toString().trim().split('\n')
+	systemOutStream.close()
+
+	// Remove the status prefix
+	Pattern filePattern = Pattern.compile("src(.+)")
+	List<String> files = []
+	for (file in allFiles) {
+		Matcher matcher = filePattern.matcher(file)
+		if (matcher.find()) {
+			files.add("src" + matcher.group(1))
+		}
+	}
+
+	// Return the list of touched src files
+	if (!files.isEmpty()) {
+		println("${files.size()} files modified; \n${files.stream().collect(Collectors.joining("\n"))}")
+	}
+	files
 }
