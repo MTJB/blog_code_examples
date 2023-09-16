@@ -22,5 +22,8 @@ jobs:
       - name: Setup Gradle 🛠️
         uses: gradle/gradle-build-action@v2.8.0
 
+      - name: Checkstyle 👮‍♀️
+        run: ./gradlew checkstyleChangedFiles -xtest
+
       - name: build 🧱
-        run: ./gradlew check
+        run: ./gradlew build
