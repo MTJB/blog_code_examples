@@ -24,4 +24,4 @@ jobs:
         uses: gradle/gradle-build-action@v2.8.0
 
       - name: build 🧱
-        run: ./gradlew check
+        run: ./gradlew build
