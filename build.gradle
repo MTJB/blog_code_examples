@@ -79,7 +79,7 @@ static def getChangedFiles() {
 
 	// Get list of all changed files including status
 	def systemOutStream = new ByteArrayOutputStream()
-	def command = "git diff --name-status --diff-filter=dr $targetBranch -- blocks-server"
+	def command = "git diff --name-status --diff-filter=dr $targetBranch"
 	command.execute().waitForProcessOutput(systemOutStream, System.err)
 	def allFiles = systemOutStream.toString().trim().split('\n')
 	systemOutStream.close()
