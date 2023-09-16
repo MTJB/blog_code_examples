@@ -1,3 +1,5 @@
+[![Merge Main](https://github.com/MTJB/blog_code_examples/actions/workflows/merge.yml/badge.svg)](https://github.com/MTJB/blog_code_examples/actions/workflows/merge.yml)
+
 # marktjbrown.com Code Examples
 
 ## Prerequisites
