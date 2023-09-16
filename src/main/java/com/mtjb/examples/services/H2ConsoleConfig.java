@@ -10,7 +10,7 @@ import java.sql.SQLException;
 @Configuration
 public class H2ConsoleConfig {
 
-    static private boolean h2Started;
+    private static boolean h2Started;
 
     @PostConstruct
     public void init() {
