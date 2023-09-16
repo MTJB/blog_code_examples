@@ -74,12 +74,9 @@ static def getChangedFiles() {
 	// Get the target branch
 	def ghTargetBranch = System.getenv("GITHUB_BASE_REF")
 
-	// Compare to master if no branch specified
-	def targetBranch = ghTargetBranch ? "origin/${ghTargetBranch}" : "main"
-
 	// Get list of all changed files including status
 	def systemOutStream = new ByteArrayOutputStream()
-	def command = "git diff --name-status --diff-filter=dr $targetBranch"
+	def command = "git diff --name-status --diff-filter=dr main"
 	command.execute().waitForProcessOutput(systemOutStream, System.err)
 	def allFiles = systemOutStream.toString().trim().split('\n')
 	systemOutStream.close()
