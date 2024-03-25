@@ -36,7 +36,7 @@ dependencies {
 	testImplementation 'org.testcontainers:mssqlserver:1.19.7'
 
 	testImplementation('org.spockframework:spock-core:2.4-M2-groovy-4.0')
-	testImplementation('org.spockframework:spock-spring:2.4-M2-groovy-4.0')
+	testImplementation('org.spockframework:spock-spring:2.4-M4-groovy-4.0')
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
