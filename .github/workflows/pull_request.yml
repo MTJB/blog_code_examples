@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: gradle/wrapper-validation-action@v3.3.2
+      - uses: gradle/wrapper-validation-action@v3.5.0
 
       - name: Setup Java ☕️
         uses: actions/setup-java@v4
@@ -20,7 +20,7 @@ jobs:
           distribution: 'corretto'
 
       - name: Setup Gradle 🛠️
-        uses: gradle/gradle-build-action@v3.3.2
+        uses: gradle/gradle-build-action@v3.5.0
 
       - name: build 🧱
         run: ./gradlew build
