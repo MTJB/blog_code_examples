@@ -29,8 +29,8 @@ dependencies {
 	implementation 'com.h2database:h2'
 	implementation 'com.microsoft.sqlserver:mssql-jdbc'
 
-	compileOnly 		group: 'org.projectlombok', name: 'lombok', version: '1.18.32'
-	annotationProcessor group: 'org.projectlombok', name: 'lombok', version: '1.18.32'
+	compileOnly 		group: 'org.projectlombok', name: 'lombok', version: '1.18.34'
+	annotationProcessor group: 'org.projectlombok', name: 'lombok', version: '1.18.34'
 
 	testImplementation 'org.testcontainers:testcontainers:1.19.8'
 	testImplementation 'org.testcontainers:mssqlserver:1.19.8'
